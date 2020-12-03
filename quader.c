@@ -1,9 +1,9 @@
-/* quader.c */
+/* Datei: quader.c */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
 
     int xA, xB, yA, yB, zA, zB;
 

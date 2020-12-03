@@ -1,8 +1,8 @@
-/* fragebogen.c */
+/* Datei: fragebogen.c */
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     char blutgruppe;
     int alter;
     float sixteenDividedBy3;

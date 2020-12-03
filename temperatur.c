@@ -1,8 +1,8 @@
-/* temperatur.c */
+/* Datei: temperatur.c */
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     int tempInFahrenheit;
     unsigned int tempInCelsius;
