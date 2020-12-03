@@ -39,7 +39,7 @@ int main() {
 
     // Grundfläche = Kante 1 * Kante 2
     grundflaeche = xAusdehnung * yAusdehnung;
-    printf("Grundflaeche: %d FE\n", grundflaeche);
+    // printf("Grundflaeche: %d FE\n", grundflaeche);
 
     // Volumen = Grundfläche * Höhe
     volumen = grundflaeche * zAusdehnung;
@@ -49,8 +49,8 @@ int main() {
     kantenlaenge = (xAusdehnung + yAusdehnung + zAusdehnung)*4;
     printf("Kantenlaenge: %d LE\n", kantenlaenge);
 
-    // Oberfläche = 2X-Ausdehnung * 2Y-Ausdehnung + 2X-Ausdehnung*2Y-Ausdehnung + 2Z-Ausdehnung * 2Y-Ausdehnung
-    oberflaeche = (2*(xAusdehnung * yAusdehnung) + 2*(xAusdehnung * yAusdehnung) + 2*(zAusdehnung * yAusdehnung));
+    // Oberfläche = 2X-Ausdehnung * 2Y-Ausdehnung + 2Y-Ausdehnung*2Z-Ausdehnung + 2X-Ausdehnung * 2Z-Ausdehnung
+    oberflaeche = 2*(xAusdehnung * yAusdehnung + yAusdehnung * zAusdehnung + xAusdehnung * zAusdehnung);
     printf("Oberflaeche: %d FE\n", oberflaeche);
 
     return 0;

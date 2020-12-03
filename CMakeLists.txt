@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(HA_GIP_03 C)
+project(HA_GIP C)
 
 set(CMAKE_C_STANDARD 99)
 
