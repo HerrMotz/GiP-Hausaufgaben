@@ -68,8 +68,8 @@ int main(void) {
     if (
             (abs(Starthaltestelle_letzteZiffer - Endhaltestelle_letzteZiffer) <= 1 && Starthaltestelle_ersteZiffer == Endhaltestelle_ersteZiffer)           // Auf einer Linie nacheinander
         ||  (abs(Starthaltestelle_ersteZiffer - Endhaltestelle_ersteZiffer) <= 1 && Starthaltestelle_letzteZiffer == 2 && Endhaltestelle_letzteZiffer == 2  // Auf der Ringlinie nebeneinander
-        ||  (StartHaltestellenNummer == 00 && (EndhaltestellenNummer == 31 || EndhaltestellenNummer == 21 || EndhaltestellenNummer == 11 || EndhaltestellenNummer == 51 || EndhaltestellenNummer == 41))         // Ausnahme für Zentralhaltestelle
-        ||  (EndhaltestellenNummer == 00 && (StartHaltestellenNummer == 31 || StartHaltestellenNummer == 21 || StartHaltestellenNummer == 11 || StartHaltestellenNummer == 51 || StartHaltestellenNummer == 41)) // Ausnahme für Zentralhaltestelle
+        ||  (StartHaltestellenNummer == 00 && Endhaltestelle_letzteZiffer == 1) // Ausnahme für Zentralhaltestelle
+        ||  (EndhaltestellenNummer == 00 && Starthaltestelle_letzteZiffer == 1) // Ausnahme für Zentralhaltestelle
         )
     ) {
         printf("Kurzstreckenrabatt: - 1 Euro\n");
