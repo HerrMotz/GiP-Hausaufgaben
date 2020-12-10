@@ -70,6 +70,7 @@ int main(void) {
         ||  (abs(Starthaltestelle_ersteZiffer - Endhaltestelle_ersteZiffer) <= 1 && Starthaltestelle_letzteZiffer == 2 && Endhaltestelle_letzteZiffer == 2)  // Auf der Ringlinie nebeneinander
         ||  (StartHaltestellenNummer == 00 && Endhaltestelle_letzteZiffer == 1) // Ausnahme für Zentralhaltestelle
         ||  (EndhaltestellenNummer == 00 && Starthaltestelle_letzteZiffer == 1) // Ausnahme für Zentralhaltestelle
+        ||  (EndhaltestellenNummer == 12 && EndhaltestellenNummer == 52) // 12 nach 52??
     ) {
         printf("Kurzstreckenrabatt: - 1 Euro\n");
         Fahrpreis -= 1;
