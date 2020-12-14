@@ -1,10 +1,7 @@
 /* Datei: froehliche_zahlen.c */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
-#include <limits.h>
-#include <string.h>
 #include <time.h>
 
 /* Checks if a value is member of an array */
