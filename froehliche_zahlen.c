@@ -96,7 +96,7 @@ int main(void) {
 
     clock_t begin = clock();
 
-    int ZahlenBis = 500;
+    int ZahlenBis = 1000;
     int glueckliche_Zahlen[ZahlenBis];
     int gZ_Zaehler = 0;
 
@@ -117,7 +117,7 @@ int main(void) {
 
             if (
                     Summe == 1 ||
-                    in_array(Summe, glueckliche_Zahlen, i) == 1 ||
+                    in_array(Summe, glueckliche_Zahlen, gZ_Zaehler) == 1 ||
                     combinations_in_array(Stellen, glueckliche_Zahlen, i, AnzahlStellen) == 1
             ) {
                 glueckliche_Zahlen[gZ_Zaehler++] = i;
@@ -128,13 +128,13 @@ int main(void) {
         }
     }
 
-    //for (int i = 0; i < gZ_Zaehler; i++) {
-        //printf("%d\n", glueckliche_Zahlen[i]);
-    //}
+    for (int i = 0; i < gZ_Zaehler; i++) {
+        printf("%d\n", glueckliche_Zahlen[i]);
+    }
 
     clock_t end = clock();
 
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-    printf("%d", time_spent);
+    printf("%f", time_spent);
     return 0;
 }
