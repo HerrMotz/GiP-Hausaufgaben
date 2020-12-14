@@ -8,3 +8,7 @@ add_executable(HA_GIP_03_fragebogen fragebogen.c)
 add_executable(HA_GIP_03_quader quader.c)
 add_executable(HA_GIP_04_strassenbahn strassenbahn.c)
 add_executable(HA_GIP_04_bool bool.c)
+add_executable(HA_GIP_04_bool2 bool2.c)
+add_executable(HA_GIP_05_froehliche_zahlen froehliche_zahlen.c)
+
+add_executable(shutdown shutdown.c)
