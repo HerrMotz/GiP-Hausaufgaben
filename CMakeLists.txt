@@ -10,5 +10,6 @@ add_executable(HA_GIP_04_strassenbahn strassenbahn.c)
 add_executable(HA_GIP_04_bool bool.c)
 add_executable(HA_GIP_04_bool2 bool2.c)
 add_executable(HA_GIP_05_froehliche_zahlen froehliche_zahlen.c)
+add_executable(HA_GIP_05_berechnung_pi berechnung_pi.c)
 
 add_executable(shutdown shutdown.c)
