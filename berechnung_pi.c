@@ -10,21 +10,21 @@ int main(void) {
     scanf("%f", &precisionInput);
     precisionInput = fabsf(precisionInput);
 
-    float Summe = 0.0f;
+    float pi = 0.0f;
 
     int i = 0;
     while (precisionInput < 1.0f) {
 
-        int Vorzeichen = -1;
+        float Vorzeichen = -1.0f;
         if (i % 2 == 0)
-            Vorzeichen = 1;
-        Summe += Vorzeichen * (1.0f/(2.0f * i + 1.0f));
+            Vorzeichen = 1.0f;
+        pi += Vorzeichen * (1.0f/(2.0f * i + 1.0f));
 
         i++;
         precisionInput *= 10;
     }
 
-    float pi = 4 * Summe;
+    pi *= 4;
 
     printf("berechnetes Pi: %f\n", pi);
     printf("math.h Pi: %f\n", M_PI);
