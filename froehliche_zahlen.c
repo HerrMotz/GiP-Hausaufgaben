@@ -18,7 +18,7 @@ int in_array(int value, int array[], int limit) {
 
 int reverse_array(int array[], int places) {
     int start = 0;
-    int end = places-1;
+    int end = places - 1;
     int temp;
     while (start < end)
     {
@@ -93,12 +93,12 @@ int main(void) {
 
     clock_t begin = clock();
 
-    int ZahlenBis = 1000;
+    int ZahlenBis = 500;
     int glueckliche_Zahlen[ZahlenBis];
     int gZ_Zaehler = 0;
+    int Zahl;
 
     for (int i = 1; i <= ZahlenBis; ++i) {
-        int Zahl;
         Zahl = i;
 
         while (Zahl != 20) {
