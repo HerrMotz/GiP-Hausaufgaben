@@ -103,7 +103,7 @@ int main(void) {
 
         while (Zahl != 20) {
             int AnzahlStellen = (int) floor(log10(Zahl)) + 1;
-            int Stellen[(int) (floor(log10(Zahl)) + 1)];
+            int Stellen[AnzahlStellen];
             int Summe = 0;
 
             for (int j = 0; j < AnzahlStellen; ++j) {
