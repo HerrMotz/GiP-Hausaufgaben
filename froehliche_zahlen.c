@@ -112,10 +112,9 @@ int main(void) {
                 Summe += round(pow(Stellen[j], 2));
             }
 
-            if (
-                    Summe == 1 ||
-                    in_array(Summe, glueckliche_Zahlen, gZ_Zaehler) == 1 ||
-                    combinations_in_array(Stellen, glueckliche_Zahlen, i, AnzahlStellen) == 1
+            if (Summe == 1 ||
+                in_array(Summe, glueckliche_Zahlen, gZ_Zaehler) == 1 ||
+                combinations_in_array(Stellen, glueckliche_Zahlen, gZ_Zaehler, AnzahlStellen) == 1
             ) {
                 glueckliche_Zahlen[gZ_Zaehler++] = i;
                 break;
