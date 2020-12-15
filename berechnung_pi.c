@@ -11,16 +11,17 @@ int main(void) {
     precisionInput = fabsf(precisionInput);
 
     float pi = 0.0f;
-
+    float Vorzeichen;
     int i = 0;
+
     while (precisionInput < 1.0f) {
 
-        float Vorzeichen = -1.0f;
-        if (i % 2 == 0)
+        if (i++ % 2 == 0)
             Vorzeichen = 1.0f;
-        pi += Vorzeichen * (1.0f/(2.0f * i + 1.0f));
+        else
+            Vorzeichen = -1.0f;
 
-        i++;
+        pi += Vorzeichen * (1.0f/(2.0f * (i-1) + 1.0f));
         precisionInput *= 10;
     }
 
