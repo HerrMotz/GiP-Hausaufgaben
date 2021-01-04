@@ -13,6 +13,9 @@ add_executable(05_berechnung_pi 5/berechnung_pi.c)
 add_executable(05_primfaktor 5/primfaktor.c)
 add_executable(06_trainingsdaten 6/trainingsdaten.c)
 
+add_executable(06_zinseszinstabelle 6/zinseszinstabelle.c)
+target_link_libraries(06_zinseszinstabelle PRIVATE m)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 
