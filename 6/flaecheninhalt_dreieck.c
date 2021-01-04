@@ -40,7 +40,7 @@ int main(void) {
 
     /* Flächeninhalt */
     float s = (a + b + c) * 0.5f;
-    float A = 0.25 * sqrtf(s * (s - a) * (s - b)* (s - c));
+    float A = 0.25f * sqrtf(s * (s - a) * (s - b)* (s - c));
 
     printf("Flächeninhalt: %lf", A);
 
