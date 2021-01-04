@@ -11,6 +11,7 @@ add_executable(04_bool 4/bool.c)
 add_executable(05_froehliche_zahlen 5/froehliche_zahlen.c)
 add_executable(05_berechnung_pi 5/berechnung_pi.c)
 add_executable(05_primfaktor 5/primfaktor.c)
+add_executable(06_trainingsdaten 6/trainingsdaten.c)
 
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
