@@ -16,6 +16,9 @@ add_executable(06_trainingsdaten 6/trainingsdaten.c)
 add_executable(06_zinseszinstabelle 6/zinseszinstabelle.c)
 target_link_libraries(06_zinseszinstabelle PRIVATE m)
 
+add_executable(06_flaecheninhalt_dreieck 6/flaecheninhalt_dreieck.c)
+target_link_libraries(06_flaecheninhalt_dreieck PRIVATE m)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 
