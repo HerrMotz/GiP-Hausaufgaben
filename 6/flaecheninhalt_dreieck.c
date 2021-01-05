@@ -26,20 +26,6 @@ int main(void) {
     double b = sqrt(pow(x_3 - x_2, 2) + pow(y_3 - y_2, 2));
     double c = sqrt(pow(x_1 - x_3, 2) + pow(y_1 - y_3, 2));
 
-    /* Eine der Seiten ist null
-     * schließt den Fall ein, dass zwei punkte identisch sind */
-    if (c == 0 || a == 0 || b == 0) {
-        printf("Die Eingabewerte ergeben kein gültiges Dreieck. Eine der Seiten ist null.");
-        return EXIT_FAILURE;
-    }
-
-    /* Dreiecksungleichung
-     * schließt auch den Fall ein, dass alle Punkte auf einer Geraden liegen */
-    if (a + b <= c || a + c <= b || b + c <= a) {
-        printf("Die Eingabewerte ergeben kein gültiges Dreieck. Die Dreiecksungleichung ist verletzt.");
-        return EXIT_FAILURE;
-    }
-
     /* Flächeninhalt
      * Satz des Heron */
     double s = (a + b + c) * 0.5f;

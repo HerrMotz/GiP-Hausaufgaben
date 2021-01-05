@@ -93,7 +93,7 @@ int main(void) {
 
     clock_t begin = clock();
 
-    int ZahlenBis = 500;
+    int ZahlenBis = 1000;
     int glueckliche_Zahlen[ZahlenBis];
     int gZ_Zaehler = 0;
     int Zahl;

@@ -28,9 +28,10 @@ int main(void) {
 
     double kapitalN;
 
+    printf("Jahr Kapital\n");
     while (jahre >= 0) {
         kapitalN = kapital * pow(1 + zinssatz, jahre);
-        printf("Jahr %d: \t %.2f\n", jahre, kapitalN);
+        printf("%2d %7.2f\n", jahre, kapitalN);
         jahre--;
     }
 
