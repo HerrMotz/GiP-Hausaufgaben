@@ -10,7 +10,7 @@
 
 int main(void) {
 
-    float   x_1, y_1,
+    double  x_1, y_1,
             x_2, y_2,
             x_3, y_3;
 
@@ -22,9 +22,9 @@ int main(void) {
     printf("\n\nPunkt 3:\n x, y:\n");
     scanf("%f %f", &x_3, &y_3);
 
-    float a = sqrt(pow(x_2 - x_1, 2) + pow(y_2 - y_1, 2));
-    float b = sqrt(pow(x_3 - x_2, 2) + pow(y_3 - y_2, 2));
-    float c = sqrt(pow(x_1 - x_3, 2) + pow(y_1 - y_3, 2));
+    double a = sqrt(pow(x_2 - x_1, 2) + pow(y_2 - y_1, 2));
+    double b = sqrt(pow(x_3 - x_2, 2) + pow(y_3 - y_2, 2));
+    double c = sqrt(pow(x_1 - x_3, 2) + pow(y_1 - y_3, 2));
 
     /* Eine der Seiten ist null
      * schließt den Fall ein, dass zwei punkte identisch sind
@@ -42,9 +42,10 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    /* Flächeninhalt */
-    float s = (a + b + c) * 0.5f;
-    float A = 0.25f * sqrtf(s * (s - a) * (s - b)* (s - c));
+    /* Flächeninhalt
+     * Satz des Heron */
+    double s = (a + b + c) * 0.5f;
+    double A = 0.25f * sqrt(s * (s - a) * (s - b)* (s - c));
 
     printf("Flächeninhalt: %lf", A);
 
