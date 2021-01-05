@@ -15,12 +15,12 @@ int main(void) {
             x_3, y_3;
 
     printf("Bitte geben Sie die Punktkoordinaten ein.\n");
-    printf("\nPunkt 1:\n x, y:\n");
-    scanf("%f %f", &x_1, &y_1);
-    printf("\n\nPunkt 2:\n x, y:\n");
-    scanf("%f %f", &x_2, &y_2);
-    printf("\n\nPunkt 3:\n x, y:\n");
-    scanf("%f %f", &x_3, &y_3);
+    printf("\nPunkt 1:\n x y:\n");
+    scanf("%lf %lf", &x_1, &y_1);
+    printf("\n\nPunkt 2:\n x y:\n");
+    scanf("%lf %lf", &x_2, &y_2);
+    printf("\n\nPunkt 3:\n x y:\n");
+    scanf("%lf %lf", &x_3, &y_3);
 
     double a = sqrt(pow(x_2 - x_1, 2) + pow(y_2 - y_1, 2));
     double b = sqrt(pow(x_3 - x_2, 2) + pow(y_3 - y_2, 2));
