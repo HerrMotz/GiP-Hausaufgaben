@@ -19,6 +19,15 @@ target_link_libraries(06_zinseszinstabelle PRIVATE m)
 add_executable(06_flaecheninhalt_dreieck 6/flaecheninhalt_dreieck.c)
 target_link_libraries(06_flaecheninhalt_dreieck PRIVATE m)
 
+add_executable(07_binary_decimal 7/binary_decimal.c)
+target_link_libraries(07_binary_decimal PRIVATE m)
+
+add_executable(07_quadratic_equation 7/quadratic_equation.c)
+target_link_libraries(07_quadratic_equation PRIVATE m)
+
+add_executable(07_delta_aristotle 7/delta_aristotle.c)
+target_link_libraries(07_delta_aristotle PRIVATE m)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 
