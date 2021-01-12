@@ -5,7 +5,12 @@
 #include <math.h>
 
 double func1(double x, double y) {
-    return (x+y) / (x-y);
+    double ret = (x+y) / (x-y);
+
+    if (isinf(ret) || x-y == 0)
+        return NAN;
+    else
+        return ret;
 }
 
 double func2(double x, double y) {
