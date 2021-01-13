@@ -4,20 +4,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-int reverse_array(int array[], int places) {
-    int start = 0;
-    int end = places - 1;
-    int temp;
-    while (start < end)
-    {
-        temp = array[start];
-        array[start] = array[end];
-        array[end] = temp;
-        start++;
-        end--;
-    }
-}
-
 int binaryToDecimal(int number) {
     int i;
     int decimalNumber = 0;
@@ -50,10 +36,13 @@ int decimalToBinary(int number) {
             binaryNumber += 1;
         }
     }
+
     return binaryNumber;
 }
 
 int main(void) {
+
+    /* user function call */
     int input;
 
     printf("Enter decimal number to be converted to binary representation:\n");
@@ -65,9 +54,27 @@ int main(void) {
     printf("binary representation: %d\n", binaryNumber);
     printf("decimal representation: %d\n", decimalNumber);
 
-    if (decimalNumber == input) {
-        printf("[self assert binaryToDecimal == decimalToBinary] Test successful!");
-    }
+
+    /* Test Case */
+    printf("\nStart Test\n");
+
+    int test_number_decimal = 86;
+    int test_number_binary = 1010110;
+
+    printf("bin: %d =?= dec: %d\n", test_number_binary, test_number_decimal);
+
+    binaryNumber = decimalToBinary(test_number_decimal);
+    decimalNumber = binaryToDecimal(test_number_binary);
+
+    if (decimalNumber != test_number_decimal)
+        printf("[self assert] decimalToBinary failed: Could not verify correctness of decimal to binary conversion!\n");
+    else
+        printf("[self assert] decimalToBinary: Test successful!\n");
+
+    if (binaryNumber != test_number_binary)
+        printf("[self assert] binaryToDecimal failed: Could not verify correctness of binary to decimal conversion!\n");
+    else
+        printf("[self assert] binaryToDecimal: Test successful!\n");
 
     return EXIT_SUCCESS;
 }
