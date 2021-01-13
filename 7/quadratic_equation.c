@@ -16,7 +16,7 @@ int solve(double a, double b, double c, double *x1, double *x2) {
     *x1 = b_halved * -1 + right_part;
     *x2 = b_halved * -1 - right_part;
 
-    if (right_part != right_part) {
+    if (*x1 != *x1 || *x2 != *x2 || isnan(*x1) || isnan(*x2)) {
         return 0;
     } else if (*x1 == *x2) {
         return 1;
