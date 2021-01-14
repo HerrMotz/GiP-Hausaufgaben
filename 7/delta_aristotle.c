@@ -5,16 +5,13 @@
 #include <math.h>
 
 double func1(double x, double y) {
-    double ret = (x+y) / (x-y);
-
-    if (isinf(ret) || x-y == 0)
+    if (y == x)
         return NAN;
-    else
-        return ret;
+    return (x+y) / (x-y);
 }
 
 double func2(double x, double y) {
-    return sqrt(round(pow(x, 2)) + round(pow(y, 2)));
+    return sqrt(x*x + y*y);
 }
 
 
@@ -22,8 +19,8 @@ int main(void) {
     double x, y;
     double result;
 
-    x = 2;
-    y = 2;
+    x = 42;
+    y = 7;
 
     result = func1(x, y);
 

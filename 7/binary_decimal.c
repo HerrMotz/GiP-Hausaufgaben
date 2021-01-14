@@ -19,22 +19,11 @@ int binaryToDecimal(int number) {
 int decimalToBinary(int number) {
     int i;
     int binaryNumber = 0;
-    int places[31];
 
-    for (i = 0; number >= 1; i++) {
-        if (number % 2 == 1) {
-            places[i] = 1;
-        } else {
-            places[i] = 0;
-        }
-        number = number / 2;
-    }
-
-    for (i -= 1; i >= 0; i--) {
-        binaryNumber *= 10;
-        if (places[i] == 1) {
-            binaryNumber += 1;
-        }
+    while (number > 0) {
+        binaryNumber += i * (number % 10);
+        i *= 2;
+        number = number / 10;
     }
 
     return binaryNumber;
