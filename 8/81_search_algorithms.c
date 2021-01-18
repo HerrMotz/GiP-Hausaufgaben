@@ -104,10 +104,16 @@ int main(void) {
 
 
     /* self assert test */
-    if (binarySearchWithPointers(31, primeIsValue, counter) == 10)
-        printf("[self assert] decimalToBinary: Test successful!\n");
+    if (primeIsValue[24] == 97)
+        printf("[self assert] Primes: Test successful!\n");
     else
-        printf("[self assert] binarySearchWithPointers in primes failed.\n");
+        printf("[self assert] Primes: Test failed.\n");
+
+    if (binarySearchWithPointers(97, primeIsValue, counter) == 24)
+        printf("[self assert] binarySearchWithPointers: Test successful!\n");
+    else
+        printf("[self assert] binarySearchWithPointers: Test failed.\n");
+    printf("\n");
 
 
     /* Aufgabe b) */
