@@ -28,6 +28,12 @@ target_link_libraries(07_quadratic_equation PRIVATE m)
 add_executable(07_delta_aristotle 7/delta_aristotle.c)
 target_link_libraries(07_delta_aristotle PRIVATE m)
 
+add_executable(81_search_algorithms 8/81_search_algorithms.c)
+target_link_libraries(81_search_algorithms PRIVATE m)
+
+add_executable(82_magic_square 8/82_magic_square.c)
+target_link_libraries(82_magic_square PRIVATE m)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 

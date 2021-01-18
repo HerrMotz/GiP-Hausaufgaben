@@ -13,14 +13,12 @@ int solve(double a, double b, double c, double *x1, double *x2) {
     double b_halved = b / 2;
     double right_part = sqrt(pow(b_halved, 2) - c);
 
-    if (isnan(right_part)) {
-        return 0;
-    }
-
     *x1 = b_halved * -1 + right_part;
     *x2 = b_halved * -1 - right_part;
 
-    if (*x1 == *x2) {
+    if (*x1 != *x1 || *x2 != *x2 || isnan(*x1) || isnan(*x2)) {
+        return 0;
+    } else if (*x1 == *x2) {
         return 1;
     } else {
         return 2;
