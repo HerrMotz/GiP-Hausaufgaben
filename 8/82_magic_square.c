@@ -39,18 +39,26 @@ int ** magicSquare (int n) {
 int main (void) {
     int n = 4;
 
-    // printf("Magisches Quadrat. Bitte geben Sie eine ungerade Zahl ein:\n");
-    // scanf("%d", &n);
+    printf("Magisches Quadrat. Bitte geben Sie eine ungerade Zahl ein:\n");
+    scanf("%d", &n);
 
     if (n % 2 == 0) {
-        printf("Bist du dumm?\n");
+        printf("(⊙.☉)7\n");
+        return EXIT_FAILURE;
     }
 
     int ** quadrat = magicSquare(n);
 
+    int max_digits = 0;
+    int cpy = n*n;
+    while (cpy != 0) {
+        cpy /= 10;
+        max_digits++;
+    }
+
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            printf("%d ", quadrat[i][j]);
+            printf("%*d ", max_digits, quadrat[i][j]);
         }
         printf("\n");
     }
