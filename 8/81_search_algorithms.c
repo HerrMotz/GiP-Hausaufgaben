@@ -70,7 +70,8 @@ int binarySearchWithPointers(int n, int *a, int l) {
 
 
 int main(void) {
-    /* Sieve of Eratosthenes */
+    /* Sieve of Eratosthenes
+     * ugly variant */
     int n = PRIME_LIMIT;
     int primes[PRIME_LIMIT];
 
@@ -78,11 +79,11 @@ int main(void) {
     int * end = &primes[0]+PRIME_LIMIT;
     for (int * i = primes; i != end; ++i) *i = 1;
 
-    for (int p=2; p*p<=n; p++)
+    for (int p = 2; p * p <= n; p++)
     {
         if (primes[p] == 1)
         {
-            for (int i=p*p; i<=n; i += p){
+            for (int i = p * p; i <= n; i += p){
                 primes[i] = 0;
             }
         }
@@ -97,21 +98,17 @@ int main(void) {
         }
     }
 
-    if (binarySearchWithPointers(31, primeIsValue, counter) == 10) {
-        printf("Self assert true\n");
-    } else {
-        printf("error in testing\n");
-    }
+    /* self assert test */
+    if (binarySearchWithPointers(31, primeIsValue, counter) == 10)
+        printf("[self assert] decimalToBinary: Test successful!\n");
+    else
+        printf("[self assert] binarySearchWithPointers in primes failed.\n");
 
-    return EXIT_SUCCESS;
-
+    /* Aufgabe b) */
     int search, result;
-
     printf("Please enter a number and we will tell you which position it is:\n");
     scanf("%d", &search);
-
     result = binarySearchWithPointers(search, primeIsValue, counter);
-
     if (result == -1) {
         printf("We're sorry! The number you entered is not a prime :(\n%d", result);
     } else {
