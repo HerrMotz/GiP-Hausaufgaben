@@ -7,11 +7,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 const int PRIME_LIMIT = 100;
 
 
-/* Aufgabe a) */
-int binarySearch(int n, int a[], int l) {
+/* Aufgabe a)
+ * */
+int binarySearch(int n, int *a, int l) {
     int middle, left, right;
 
     left = 0;
@@ -44,7 +46,9 @@ int linearSearch(int n, int *a, int l) {
 /*
  * end Aufgabe a) */
 
-/* Aufgabe c) */
+
+/* Aufgabe c)
+ * */
 int binarySearchWithPointers(int n, int *a, int l) {
     int *left, *right, *m;
 
@@ -70,12 +74,11 @@ int binarySearchWithPointers(int n, int *a, int l) {
 
 
 int main(void) {
-    /* Sieve of Eratosthenes
-     * ugly variant */
+
+    /* Sieve of Eratosthenes */
     int n = PRIME_LIMIT;
     int primes[PRIME_LIMIT];
 
-    /* init array */
     int * end = &primes[0]+PRIME_LIMIT;
     for (int * i = primes; i != end; ++i) *i = 1;
 
@@ -92,11 +95,13 @@ int main(void) {
     /* sad and ugly mapping */
     int primeIsValue[PRIME_LIMIT];
     int counter = 0;
+
     for (int i = 0; i <= PRIME_LIMIT; i++) {
         if (primes[i] == 1 && i >= 2) {
             primeIsValue[counter++] = i;
         }
     }
+
 
     /* self assert test */
     if (binarySearchWithPointers(31, primeIsValue, counter) == 10)
@@ -104,11 +109,14 @@ int main(void) {
     else
         printf("[self assert] binarySearchWithPointers in primes failed.\n");
 
+
     /* Aufgabe b) */
     int search, result;
+
     printf("Please enter a number and we will tell you which position it is:\n");
     scanf("%d", &search);
     result = binarySearchWithPointers(search, primeIsValue, counter);
+
     if (result == -1) {
         printf("We're sorry! The number you entered is not a prime :(\n%d", result);
     } else {
