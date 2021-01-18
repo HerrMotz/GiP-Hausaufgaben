@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
 
 int ** magicSquare (int n) {
     int ** quadrat = calloc(n, sizeof(int*));
@@ -16,7 +16,7 @@ int ** magicSquare (int n) {
 
     int max = n*n;
     int column = n/2;
-    int row = n/2+1;
+    int row = (n/2+1) % n;
     int i = 1;
 
     while (i <= max) {
@@ -35,8 +35,12 @@ int ** magicSquare (int n) {
     return quadrat;
 }
 
+
 int main (void) {
-    int n = 5;
+    int n = 4;
+
+    // printf("Magisches Quadrat. Bitte geben Sie eine ungerade Zahl ein:\n");
+    // scanf("%d", &n);
 
     if (n % 2 == 0) {
         printf("Bist du dumm?\n");
