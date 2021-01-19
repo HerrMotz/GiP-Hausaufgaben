@@ -40,7 +40,7 @@ int main (void) {
     int n;
 
     /* self assert test */
-    if (magicSquare(3)[1][1] == 5 && magicSquare(5)[1][1] == 12 && magicSquare(31)[14][15] == 961)
+    if (magicSquare(1)[0][0] == 1 && magicSquare(3)[1][1] == 5 && magicSquare(5)[1][1] == 12 && magicSquare(31)[14][15] == 961)
         printf("[self assert] Magic Square: Test successful!\n");
     else
         printf("[self assert] Magic Square: Test failed.\n");
