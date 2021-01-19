@@ -104,7 +104,7 @@ int main(void) {
 
 
     /* self assert test */
-    if (primeIsValue[24] == 97)
+    if (primeIsValue[24] == 97 && primeIsValue[10] == 31 && primeIsValue[0] == 2)
         printf("[self assert] Primes: Test successful!\n");
     else
         printf("[self assert] Primes: Test failed.\n");
