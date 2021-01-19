@@ -37,9 +37,15 @@ int ** magicSquare (int n) {
 
 
 int main (void) {
-    int n = 4;
+    int n;
 
-    printf("Magisches Quadrat. Bitte geben Sie eine ungerade Zahl ein:\n");
+    /* self assert test */
+    if (magicSquare(3)[1][1] == 5 && magicSquare(5)[1][1] == 12 && magicSquare(31)[14][15] == 961)
+        printf("[self assert] Magic Square: Test successful!\n");
+    else
+        printf("[self assert] Magic Square: Test failed.\n");
+
+    printf("\nMagisches Quadrat. Bitte geben Sie eine ungerade Zahl ein:\n");
     scanf("%d", &n);
 
     if (n % 2 == 0) {
