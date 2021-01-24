@@ -67,10 +67,10 @@ int main(void) {
                   "KDHWWH PDQ QLHPDOV YHUODVVHQ GXHUIHQ";
 
     char *message = decipher(code, 3);
-    printf("\nEntschluesselt:\n%s\n", message);
+    printf("\nDeciphered:\n%s\n", message);
 
     message = encipher(message, 3);
-    printf("\nVerschluesselt:\n%s\n", message);
+    printf("\nEnciphered:\n%s\n", message);
 
     /* and because the task specifically asks for it, we can also encrypt using ROT26 */
     message = encipher("SECRET MESSAGE", 26);
