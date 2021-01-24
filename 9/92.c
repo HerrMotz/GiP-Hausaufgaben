@@ -61,16 +61,20 @@ int main(void) {
         printf("[self assert] Decipher: Test failed\n");
 
     /* Task */
-    char *message = decipher(
-        "YLHOH NDPHQ DOOPDHKOLFK CX GHU XHEHUCHXJXQJ HLQHQ JURVVHQ IHKOHU "
-        "JHPDFKW CX KDEHQ DOV VLH YRQ GHQ EDHXPHQ KHUXQWHUJHNRPPHQ ZDUHQ XQG "
-        "HLQLJH VDJWHQ VFKRQ GLH EDHXPH VHLHQ HLQ KROCZHJ JHZHVHQ GLH RCHDQH "
-        "KDHWWH PDQ QLHPDOV YHUODVVHQ GXHUIHQ",
-        3
-    );
-    printf("Entschluesselt: %s\n", message);
+    char code[] = "YLHOH NDPHQ DOOPDHKOLFK CX GHU XHEHUCHXJXQJ HLQHQ JURVVHQ IHKOHU "
+                  "JHPDFKW CX KDEHQ DOV VLH YRQ GHQ EDHXPHQ KHUXQWHUJHNRPPHQ ZDUHQ XQG "
+                  "HLQLJH VDJWHQ VFKRQ GLH EDHXPH VHLHQ HLQ KROCZHJ JHZHVHQ GLH RCHDQH "
+                  "KDHWWH PDQ QLHPDOV YHUODVVHQ GXHUIHQ";
+
+    char *message = decipher(code, 3);
+    printf("\nEntschluesselt:\n%s\n", message);
+
     message = encipher(message, 3);
-    printf("Verschluesselt: %s\n", message);
+    printf("\nVerschluesselt:\n%s\n", message);
+
+    /* and because the task specifically asks for it, we can also encrypt using ROT26 */
+    message = encipher("SECRET MESSAGE", 26);
+    printf("\nROT26:\n%s\n", message);
 
     return EXIT_SUCCESS;
 }
