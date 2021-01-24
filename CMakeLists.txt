@@ -34,6 +34,14 @@ target_link_libraries(81_search_algorithms PRIVATE m)
 add_executable(82_magic_square 8/82_magic_square.c)
 target_link_libraries(82_magic_square PRIVATE m)
 
+add_executable(91a 9/91a.c)
+
+add_executable(91b 9/91b.c)
+
+add_executable(91c 9/91c.c)
+
+add_executable(92 9/92.c)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 
