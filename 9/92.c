@@ -72,7 +72,7 @@ int main(void) {
     message = encipher(message, 3);
     printf("\nEnciphered:\n%s\n", message);
 
-    /* and because the task specifically asks for it, we can also encrypt using ROT26 */
+    /* and because the task specifically asks for it, we can also encipher using ROT26 */
     message = encipher("SECRET MESSAGE", 26);
     printf("\nROT26:\n%s\n", message);
 
