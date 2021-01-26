@@ -19,8 +19,13 @@ int check(long long unsigned int number) {
 int main(void) {
 
     long long unsigned int n = 98666631111;
+    printf("%llu ascending rtl?: %d\n", n, check(n));
 
-    printf("check asc order from right to left: %d\n", check(n));
+    n = 9876543210;
+    printf("%llu ascending rtl?: %d\n", n, check(n));
+
+    n = 4562313488;
+    printf("%llu ascending rtl?: %d\n", n, check(n));
 
     return EXIT_SUCCESS;
 }
