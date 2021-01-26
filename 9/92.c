@@ -56,9 +56,9 @@ int main(void) {
         printf("[self assert] Decipher: Test failed\n");
 
     if (strcmp(encipher("ZUW", 3), "CXZ") == 0)
-        printf("[self assert] Decipher: Test successful!\n");
+        printf("[self assert] Encipher: Test successful!\n");
     else
-        printf("[self assert] Decipher: Test failed\n");
+        printf("[self assert] Encipher: Test failed\n");
 
     /* Task */
     char code[] = "YLHOH NDPHQ DOOPDHKOLFK CX GHU XHEHUCHXJXQJ HLQHQ JURVVHQ IHKOHU "
