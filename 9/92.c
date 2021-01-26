@@ -17,7 +17,7 @@ char *encipher(char string[], int key) {
     for (int i = 0; string[i] != 0; ++i) {
         if (string[i] != 32) {
             /* this, sadly, is implementation defined */
-            encipher[i] = (string[i] + key - 65 + 26) % 26 + 65;
+            encipher[i] = (string[i] + key - 0x41 + 0x1a) % 0x1a + 0x41;
         } else {
             encipher[i] = 32;
         }
@@ -35,7 +35,7 @@ char *decipher(char string[], int key) {
     for (int i = 0; string[i] != 0; ++i) {
         if (string[i] != 32) {
             /* this, sadly, is implementation defined */
-            decipher[i] = (string[i] - key - 65 + 26) % 26 + 65;
+            decipher[i] = (string[i] - key - 0x41 + 0x1a) % 0x1a + 0x41;
         } else {
             decipher[i] = 32;
         }
