@@ -13,15 +13,15 @@ int f (int n) {
 /* Aufgabe b)
  * Vorkommen einer Ziffer in einer Zahl */
 int countDigitOccurences(long long int number, int digit) {
-    if (number == 0 && digit == 0) {
-        return 1;
-    } else if (number % 10 == digit && digit != 0) {
+    if (number < 10)
+        if (number == digit)
+            return 1;
+        else
+            return 0;
+    else if (number % 10 == digit)
         return 1 + countDigitOccurences(number/10, digit);
-    } else if (number != 0) {
+    else if (number != 0)
         return countDigitOccurences(number/10, digit);
-    } else {
-        return 0;
-    }
 }
 
 /* Aufgabe c)
@@ -50,13 +50,13 @@ int main(void) {
         printf("failed\n");
 
     printf("[self assert] Digit occurences:\t\tTest ");
-    if (countDigitOccurences(0, 0) == 1 && countDigitOccurences(10, 0) == 1 && countDigitOccurences(98666631111, 6) == 4 && countDigitOccurences(1, 1) == 1)
+    if (countDigitOccurences(0, 0) == 1 && countDigitOccurences(1234, 0) == 0 && countDigitOccurences(10, 0) == 1 && countDigitOccurences(98666631111, 6) == 4 && countDigitOccurences(1, 1) == 1)
         printf("successful!\n");
     else
         printf("failed\n");
 
     printf("[self assert] checkAscRTL:\t\t\tTest ");
-    if (checkAscRTL(98666631111) == 1 && checkAscRTL(4562313488) == 0)
+    if (checkAscRTL(98666631111) == 1 && checkAscRTL(4562313488) == 0 && checkAscRTL(1) == 1)
         printf("successful!\n");
     else
         printf("failed\n");

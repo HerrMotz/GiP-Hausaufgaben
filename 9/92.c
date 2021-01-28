@@ -9,17 +9,18 @@
 #include <string.h>
 
 const int verbose = 0;
+const int ASCII_A = 0x41;
+const int ASCII_Z = ASCII_A + 0x1a;
 
 char *encipher(char string[], int key) {
     char *encipher;
-    encipher = malloc(strlen(string));
+    encipher = calloc(strlen(string), sizeof(char));
 
     for (int i = 0; string[i] != 0; ++i) {
-        if (string[i] != 32) {
-            /* this, sadly, is implementation defined */
-            encipher[i] = (string[i] + key - 0x41 + 0x1a) % 0x1a + 0x41;
+        if (ASCII_A <= string[i] && string[i] <= ASCII_Z) {
+            encipher[i] = (char)((string[i] + key - ASCII_A + 0x1a) % 0x1a + ASCII_A);
         } else {
-            encipher[i] = 32;
+            encipher[i] = string[i];
         }
         if (verbose) {
             printf("%c %d %c %d\n", string[i], string[i], encipher[i], encipher[i]);
@@ -29,21 +30,7 @@ char *encipher(char string[], int key) {
 }
 
 char *decipher(char string[], int key) {
-    char *decipher;
-    decipher = malloc(strlen(string));
-
-    for (int i = 0; string[i] != 0; ++i) {
-        if (string[i] != 32) {
-            /* this, sadly, is implementation defined */
-            decipher[i] = (string[i] - key - 0x41 + 0x1a) % 0x1a + 0x41;
-        } else {
-            decipher[i] = 32;
-        }
-        if (verbose) {
-            printf("%c %d %c %d\n", string[i], string[i], decipher[i], decipher[i]);
-        }
-    }
-    return decipher;
+    return encipher(string, -key);
 }
 
 int main(void) {
