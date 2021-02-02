@@ -38,6 +38,10 @@ add_executable(91 9/91.c)
 
 add_executable(92 9/92.c)
 
+add_executable(10_1 10/10_1.c)
+
+add_executable(10_2 10/10_2.c)
+
 add_executable(ilias_02_1 ilias/HA_ilias_02_1.c)
 target_link_libraries(ilias_02_1 PRIVATE m)
 

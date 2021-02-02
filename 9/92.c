@@ -18,7 +18,7 @@ char *encipher(char string[], int key) {
 
     for (int i = 0; string[i] != 0; ++i) {
         if (ASCII_A <= string[i] && string[i] <= ASCII_Z) {
-            encipher[i] = (char)((string[i] + key - ASCII_A + 0x1a) % 0x1a + ASCII_A);
+            encipher[i] = (char)((string[i] + key - 'A' + 0x1a) % 0x1a + 'A');
         } else {
             encipher[i] = string[i];
         }
