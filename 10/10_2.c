@@ -4,6 +4,7 @@
  *
  * */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,21 +27,15 @@ struct dnode *mkNode(int val){
 
 struct dnode *head, *tail;
 
-void insertLast (int val) {
-    struct dnode *new = mkNode(val);
-    if (head == NULL) {
-        head = new;
-    } else {
-        tail->next = new;
-        new->prev = tail;
-    }
-    tail = new;
-}
-
 void insertFirst (int val) {
     struct dnode *new = mkNode(val);
-    new->next = head;
-    head->prev = new;
+    if (head != NULL) {
+        new->next = head;
+        head->prev = new;
+    }
+    if (tail == NULL) {
+        tail = new;
+    }
     head = new;
 }
 
@@ -53,6 +48,9 @@ void delete (int val) {
     if (p != NULL) { // p->data == val
         if (p == head){
             head = p->next;
+        } else if (p == tail) {
+            tail = p->prev;
+            tail->next = NULL;
         } else {
             prev->next = p->next;
             p->next->prev = prev;
@@ -99,21 +97,27 @@ int main(void) {
         }
     }
 
-    for (int i = 0; i <= PRIME_LIMIT; i++) {
+    for (int i = PRIME_LIMIT; i >= 0; --i) {
         if (primes[i] == 1 && i >= 2) {
-            insertLast(i);
+            insertFirst(i);
         }
     }
 
     printList();
 
-    delete(17);
+    int value;
+    printf("Geben Sie eine zu löschende Zahl aus den oben gegebenen Liste an\n");
+    scanf("%d", &value);
+    delete(value);
+
+    printList();
+
+    printf("Geben Sie eine am Anfang einzufügende Zahl ein\n");
+    scanf("%d", &value);
+    insertFirst(value);
 
     printListReverse();
-
-    insertFirst(0);
-
-    printListReverse();
+    printList();
 
     return EXIT_SUCCESS;
 }

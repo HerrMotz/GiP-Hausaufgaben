@@ -39,7 +39,7 @@ struct node *mkNode(int val){
     }
 }
 
-struct node *top = NULL;
+struct node *top;
 
 void push(int x){
     struct node *p = mkNode(x);
@@ -63,7 +63,7 @@ int peek(void){
     return top->data;
 }
 
-bool empty(void) {return top == NULL;}
+bool empty(void) { return top == NULL; }
 
 void clear() {
     while (!empty()) {
@@ -119,13 +119,13 @@ int validateExpression(char *expression, bool verbose) {
             push(expression[i]);
 
         } else if (isClosingBracket(expression[i])) {
-            if (empty() || peek() != getOpenBracket(expression[i])){
+            if (peek() != getOpenBracket(expression[i])){
                 printWarn(expression, i, verbose);
                 clear();
                 return 0;
-            } else if (peek() == getOpenBracket(expression[i]))
+            } else {
                 pop();
-
+            }
         }
     }
     if (!empty()) {
@@ -158,7 +158,9 @@ int main(void){
     fgets(expression, 41, stdin);
     strtok(expression, "\n");
 
-    validateExpression(expression, true);
+    if (validateExpression(expression, true)) {
+        printf("Keine Fehler gefunden.\n");
+    }
 
     return EXIT_SUCCESS;
 }
